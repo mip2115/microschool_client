@@ -78,13 +78,7 @@ const ResultsFilterCol = () => {
                 />
             </InputFieldContainer>
 
-            <br />
-            <InputFieldContainer size={SIZE.LARGE}>
-                <TextDropDown
-                    placeholder="Select price"
-                    options={priceBrackets}
-                />
-            </InputFieldContainer>
+      
 
         </div>
     )

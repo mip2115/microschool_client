@@ -4,6 +4,7 @@
 }
 
 $primary-font-color: rgb(92, 92, 92);
+$secondary-font-color: rgb(214, 214, 214);
 $primary-green-color: rgb(54, 230, 1);
 $light-font-color: rgb(248, 248, 248);
 
@@ -12,7 +13,7 @@ $primary-font-size: 16px;
 $min-height-input: 50px;
 $containerPadding: 25px;
 
-$primary-box-shadow: 1px 1px 5px  rgb(153, 153, 153);
+$primary-box-shadow: 1px 1px 10px  rgb(165, 165, 165);
 
 
 .app-wrapper {
@@ -45,7 +46,7 @@ $primary-box-shadow: 1px 1px 5px  rgb(153, 153, 153);
   display:flex;
   flex-direction:row;
   justify-content: space-between;
-  box-shadow: 1px 1px 5px  rgb(153, 153, 153);
+  box-shadow: $primary-box-shadow;
   height:60px;
   width:100%;
 
@@ -70,124 +71,101 @@ $primary-box-shadow: 1px 1px 5px  rgb(153, 153, 153);
 
 
 // components 
+
+.resultinfobar {
+  box-sizing: border-box;
+  padding: $containerPadding;
+  display:flex;
+  flex-direction: row;
+  //border:solid 1px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom:10px;
+  //box-shadow: $primary-box-shadow;
+  border-bottom: solid 1px;
+  border-color: $secondary-font-color;
+  &-term {
+    box-sizing: border-box;
+    font-size:20px;
+  }
+  &-sort {
+    box-sizing: border-box;
+    
+    
+  }
+
+}
 .resultslist{
 
   //border:solid;
   flex:1;
+
+  ul {
+    margin:0;
+    padding:0;
+    list-style:none;
+
+    li:not(:first-child) {
+      padding-top:20px;
+    }
+    li:not(:last-child) {
+      padding-bottom:20px;
+      border-bottom:solid 1px;
+      border-color: $secondary-font-color;
+    }
   
-  padding:0 10px;
+  }
+
+ 
+  
 }
 
 .resultitem {
-  
-  box-shadow:$primary-box-shadow;
+  //box-shadow:$primary-box-shadow;
   box-sizing: border-box;
   display:flex;
-  flex-direction:column;
-  padding:$containerPadding;
- 
-
- 
-
-  &-header {
+  flex-direction:row;
+  //padding:$containerPadding;
+  height:150px;
+  &-img {
     box-sizing: border-box;
-    border-bottom:solid 1px;
+    width:175px;
+    height:100%;
+    border-radius:2px;
+  
+    background-position:center top;
+    background-size:cover;
+    
+  
+    height:100%;
+  }
+  &-content {
     display:flex;
     flex-direction: column;
+    width:100%;
+    margin:0 10px;
 
-    height:30px;
-    justify-content: center;
-  }
-
-  &-info {
-    box-sizing: border-box;
-    margin-top:10px;
-    display:flex;
-    flex-direction: row;
-    height:200px;
-
-    &-img {
+    &-header {
+      text-decoration:underline;
       box-sizing: border-box;
-      width:200px;
-      height:100%;
-    
-      background-position:center top;
-      background-size:cover;
-      margin-right:10px;
-
-    }
-    &-facts {
-      box-sizing: border-box;
- 
-      width:250px;
-      height:100%;
-      padding:0 5px;
-
-      &-label {
-        font-weight:bold;
-      }
-      &-list {
-      
-        & ul {
-          padding:0;
-          margin:0;
-          margin-top:2px;
-          list-style:none;
-
-          & span {
-            width:90px;
-            display: inline-block;
-          }
-          margin-bottom:5px;
-        }
-      }
-    }
-
-    &-schedule {
-      box-sizing: border-box;
- 
-      width:250px;
-      height:100%;
-      padding:0 5px;
-
-      &-label {
-        font-weight:bold;
-      }
-      &-days {
-      
-        & ul {
-          padding:0;
-          margin:0;
-          margin-top:2px;
-          list-style:none;
-
-          & span {
-            width:90px;
-            display: inline-block;
-          }
-          margin-bottom:5px;
-        }
-      }
-      & a {
-       
-        text-decoration:none;
-        color: green;
-      }
-    }
-
-    &-rating {
-      box-sizing: border-box;
-
-      flex:1;
-      height:100%;
+      //border-bottom:solid 1px;
+      border-color:$secondary-font-color;
       display:flex;
-      justify-content: flex-end;
-      align-items:flex-end;
+      flex-direction: column;
+      font-weight:bold;
+     // height:30px;
+      justify-content: center;
+      width:100%;
     }
-  
+    &-overview {
+      margin-top:5px;
+      display:flex;
+      flex-direction: column;
+      & span {
+        font-weight:bold;
+      }
+    }
   }
-
-
 }
 
 // utils 
@@ -208,16 +186,21 @@ $primary-box-shadow: 1px 1px 5px  rgb(153, 153, 153);
   box-sizing: border-box;
   color: $primary-font-color;
   
+  width:100%;
   
   position:relative;
   &-header {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
     box-sizing: border-box;
-    padding:5px 4px;
+    padding:10px 10px;
     border:solid 1px;
+    border-color:$secondary-font-color;
     cursor:pointer;
     &-selected {
       display:inline-block;
-      width:130px;
+      //width:100%;
       margin-right: 10px;
     }
     &-carrot:hover {
@@ -242,10 +225,13 @@ $primary-box-shadow: 1px 1px 5px  rgb(153, 153, 153);
       
 
       & li {
-        padding:5px 4px;
+        padding:10px 10px;
+
+       // padding:5px 4px;
         cursor:pointer;
         &:not(:last-child) {
           border-bottom:solid 1px;
+          border-color:$secondary-font-color;
         }
         &:hover {
           opacity:0.5;
@@ -275,6 +261,7 @@ $primary-box-shadow: 1px 1px 5px  rgb(153, 153, 153);
     padding:0;
     margin:0;
     margin-right:5px;
+    border-color:$secondary-font-color;
 
   }
 }
@@ -295,6 +282,7 @@ $primary-box-shadow: 1px 1px 5px  rgb(153, 153, 153);
     
     border:none;
     border-bottom: solid 1px;
+    border-color:$secondary-font-color;
     width:100%;
     padding:5px 4px;
   }
@@ -307,15 +295,16 @@ $primary-box-shadow: 1px 1px 5px  rgb(153, 153, 153);
 
 // screens
 .results {
-  padding:0 10px;
   color: $primary-font-color;
+  padding:10px;
   box-sizing: border-box;
   position:relative;
   height:calc(100vh - 70px);
-  margin-top:10px;
-  display:flex;
-  flex-direction: row;
 
+  &-display {
+    display:flex;
+    flex-direction: row;
+  }
 }
 
 .welcome {
@@ -428,7 +417,7 @@ $primary-box-shadow: 1px 1px 5px  rgb(153, 153, 153);
 
   height:400px;
   //width:275px;
-  box-shadow: 1px 1px 5px  rgb(153, 153, 153);
+  //box-shadow: $primary-box-shadow;
   margin-right:10px;
   padding: $containerPadding;
   //display:flex;

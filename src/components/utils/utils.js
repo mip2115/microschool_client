@@ -116,7 +116,11 @@ class TextDropDownComponent extends Component {
             <div className="textDropdownWithPlaceholder">
             <div onClick={this.handleClickArrow}  className="textDropdownWithPlaceholder-header">
                 <span className="textDropdownWithPlaceholder-header-selected">{this.state.title}</span> 
-                <span className="textDropdownWithPlaceholder-header-carrot">&#9660;</span>
+                
+                {displayList ? 
+                    <span className="textDropdownWithPlaceholder-header-carrot">&#9650;</span> :
+                    <span className="textDropdownWithPlaceholder-header-carrot">&#9660;</span>
+                }
             </div>
             {displayList && 
                 <div>
