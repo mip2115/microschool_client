@@ -19,6 +19,7 @@ const ResultsList = (props) => {
                         rating={4.5}
                         subject="Introduction to algebra"
                         profileImage={link1}
+                        startDate="September 1, 2020"
                     />
                 </li>
                 <li>
@@ -28,6 +29,7 @@ const ResultsList = (props) => {
                         rating={4.8}
                         subject="Algebraic strategies"
                         profileImage={link2}
+                        startDate="September 3, 2020"
                     />
                 </li>
                 <li>
@@ -37,6 +39,7 @@ const ResultsList = (props) => {
                         rating={4.1}
                         subject="Linear algebra"
                         profileImage={link3}
+                        startDate="September 9, 2020"
                     />
                 </li>
                 <li>
@@ -46,6 +49,7 @@ const ResultsList = (props) => {
                         rating={3.9}
                         subject="Algebra & the world"
                         profileImage={link4}
+                        startDate="September 13, 2020"
                     />
                 </li>
                 <li>
@@ -55,6 +59,7 @@ const ResultsList = (props) => {
                         rating={4.2}
                         subject="Practical algebra"
                         profileImage={link5}
+                        startDate="September 14, 2020"
                     />
                 </li>
                 <li>
@@ -64,6 +69,7 @@ const ResultsList = (props) => {
                         rating={4.1}
                         subject="Fifth grade algebra"
                         profileImage={link6}
+                        startDate="September 19, 2020"
                     />
                 </li>
                 <li>
@@ -73,6 +79,7 @@ const ResultsList = (props) => {
                         rating={3.8}
                         subject="Introduction to algebra"
                         profileImage={link7}
+                        startDate="September 20, 2020"
                     />
                 </li>
             </ul>

@@ -24,6 +24,30 @@ $primary-box-shadow: 1px 1px 5px  rgb(165, 165, 165);
   margin: 0 auto; 
 }
 
+.navlogo {
+
+  box-sizing: border-box;
+  width:250px;
+  color: $primary-font-color;
+  //padding: 10px 30px;
+  //border:solid;
+  letter-spacing: 3px;;
+  font-weight:bold;
+  text-transform:uppercase;
+
+  
+  display:flex;
+
+  justify-content: center;
+  align-items:center;
+  height:20px;
+
+  & img {
+    height:20px;
+    margin-right:20px;
+  }
+
+}
 .navitem {
   box-sizing: border-box;
   width:100px;
@@ -36,6 +60,8 @@ $primary-box-shadow: 1px 1px 5px  rgb(165, 165, 165);
   justify-content: center;
   align-items:center;
   height:20px;
+
+  
   
   
   
@@ -175,7 +201,7 @@ $primary-box-shadow: 1px 1px 5px  rgb(165, 165, 165);
        
         position:relative;
         //border:solid;
-        width:150px;
+        width:250px;
 
         &-box {
           display:flex;
@@ -185,7 +211,7 @@ $primary-box-shadow: 1px 1px 5px  rgb(165, 165, 165);
           //border:solid;
           bottom: 0;
           left: 0;
-          width:100%;
+          width:150px;
 
           &-btn {
             border:solid 1px;

@@ -1,13 +1,15 @@
 import React from 'react';
 import NavItem from './NavItem';
-
-
+import logo from '../../res/images/logo.png';
+import NavLogo from './Navlogo';
 
 const Navbar = (props) => {
     return(
         <div className="navbar">
             <div className="navbar-left">
-                <NavItem title="logo" />
+                <NavLogo
+                 img={logo}
+                 title="Microversity" />
             </div>
             <div className="navbar-right">
                 <NavItem title="About" />

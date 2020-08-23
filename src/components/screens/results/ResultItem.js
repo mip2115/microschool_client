@@ -6,7 +6,8 @@ const ResultItem = (props) => {
         profileImage,
         price,
         subject,
-        rating
+        rating,
+        startDate
     } = props;
     const imgStyle = {
         backgroundImage: `url(${profileImage})`
@@ -23,7 +24,7 @@ const ResultItem = (props) => {
                 </div>
                 <div className="resultitem-content-overview">
                     <div className="resultitem-content-overview-info">
-                        <span>9/1/20 – 6/1/21</span> 
+                        <span>{startDate} </span> 
                         <span className="resultitem-content-overview-info-box">
                             <span className="resultitem-content-overview-info-box-link">
                             View resume
