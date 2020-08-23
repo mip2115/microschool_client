@@ -13,7 +13,7 @@ $primary-font-size: 16px;
 $min-height-input: 50px;
 $containerPadding: 25px;
 
-$primary-box-shadow: 1px 1px 10px  rgb(165, 165, 165);
+$primary-box-shadow: 1px 1px 5px  rgb(165, 165, 165);
 
 
 .app-wrapper {
@@ -143,26 +143,89 @@ $primary-box-shadow: 1px 1px 10px  rgb(165, 165, 165);
     display:flex;
     flex-direction: column;
     width:100%;
-    margin:0 10px;
+    margin-left: 10px;
 
     &-header {
-      text-decoration:underline;
+      //-decoration:underline;
       box-sizing: border-box;
       //border-bottom:solid 1px;
       border-color:$secondary-font-color;
       display:flex;
-      flex-direction: column;
+      flex-direction: row;
       font-weight:bold;
      // height:30px;
-      justify-content: center;
+      justify-content: space-between;
       width:100%;
+
+      font-size:20px;
     }
     &-overview {
-      margin-top:5px;
+      margin-top:2px;
       display:flex;
-      flex-direction: column;
-      & span {
-        font-weight:bold;
+      flex-direction: row;
+      //border:solid;
+      flex:1;
+      justify-content: space-between;
+
+
+      &-info {
+    
+        display:flex;
+        flex-direction:column;
+       
+        position:relative;
+        //border:solid;
+        width:150px;
+
+        &-box {
+          display:flex;
+          flex-direction:column;
+          position:absolute;
+          box-sizing: border-box;
+          //border:solid;
+          bottom: 0;
+          left: 0;
+          width:100%;
+
+          &-btn {
+            border:solid 1px;
+            cursor:pointer;
+            text-align:center;
+            transition: .2s all;
+            border-color:$secondary-font-color;
+            padding:5px 10px;
+            box-shadow: 1px 1px #cccccc;
+
+            &:hover {
+              opacity:0.5;
+            }
+          }
+
+          &-link {
+            color:green;
+            //text-align:center;
+            margin-bottom:4px;
+            cursor:pointer;
+            transition: .2s all;
+
+            &:hover {
+              opacity:0.5;
+            }
+          }
+
+        }
+
+      }
+      &-rating {
+        //border:solid;
+        display:flex;
+        flex-direction: column;
+        justify-content: flex-end;;
+        align-content: flex-end;;
+
+        & span {
+          font-size:20px;
+        }
       }
     }
   }
