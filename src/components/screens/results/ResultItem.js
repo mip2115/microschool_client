@@ -7,7 +7,8 @@ const ResultItem = (props) => {
         price,
         subject,
         rating,
-        startDate
+        startDate,
+        name
     } = props;
     const imgStyle = {
         backgroundImage: `url(${profileImage})`
@@ -21,16 +22,20 @@ const ResultItem = (props) => {
                 <div className="resultitem-content-header"> 
                     <span>{subject}</span> 
                     <span>${price}</span> 
+                    
                 </div>
                 <div className="resultitem-content-overview">
                     <div className="resultitem-content-overview-info">
-                        <span>{startDate} </span> 
-                        <span className="resultitem-content-overview-info-box">
-                            <span className="resultitem-content-overview-info-box-link">
-                            View resume
+                        <span>{name} </span> 
+                        <span style={{fontSize:"12px"}}>PhD in geometry </span> 
+                        <span style={{fontSize:"12px"}}>Cambridge University 2020 </span> 
+                        <span style={{fontSize:"12px"}} className="resultitem-content-overview-info-box-link">
+                            My resume
                             </span>
+                        <span className="resultitem-content-overview-info-box">
+                            
                             <span className="resultitem-content-overview-info-box-btn">
-                            Course
+                            View Class
                             </span>
                             
                         </span>

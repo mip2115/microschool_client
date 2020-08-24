@@ -1,5 +1,5 @@
 .app {
-  
+  //filter: brightness(50%);
 
 }
 
@@ -15,6 +15,16 @@ $containerPadding: 25px;
 
 $primary-box-shadow: 1px 1px 5px  rgb(165, 165, 165);
 
+$primary-animation-time: .2s;
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $secondary-font-color;
+  margin: 20px 0;
+  padding: 0;
+}
 
 .app-wrapper {
   box-sizing: border-box;
@@ -25,7 +35,7 @@ $primary-box-shadow: 1px 1px 5px  rgb(165, 165, 165);
 }
 
 .navlogo {
-
+  cursor:pointer;
   box-sizing: border-box;
   width:250px;
   color: $primary-font-color;
@@ -49,6 +59,7 @@ $primary-box-shadow: 1px 1px 5px  rgb(165, 165, 165);
 
 }
 .navitem {
+  cursor:pointer;
   box-sizing: border-box;
   width:100px;
   color: $primary-font-color;
@@ -61,10 +72,6 @@ $primary-box-shadow: 1px 1px 5px  rgb(165, 165, 165);
   align-items:center;
   height:20px;
 
-  
-  
-  
-  
 }
 
 .navbar {
@@ -97,6 +104,90 @@ $primary-box-shadow: 1px 1px 5px  rgb(165, 165, 165);
 
 
 // components 
+.signup {
+  color: $primary-font-color;
+  
+  &-title {
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+   // border-bottom:solid 1px $secondary-font-color;
+    
+    //border:solid; 
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight:bold;
+    & img {
+      height:20px;
+      margin-right:10px;
+    }
+  }
+  &-body {
+    margin-top:30px;
+    text-align:right;
+    &-btn {
+      margin-top:20px;
+      box-shadow: 1px 1px #cccccc;
+      text-align:center;
+      padding: 5px 5px;
+      width:150px;
+      border: solid 1px $secondary-font-color;
+      display:inline-block;
+      cursor:pointer;
+      transition:.2s all;
+
+      &:hover {
+        opacity:.5;
+
+      }
+    }
+  }
+  &-footer {
+    margin-top:40px;
+    font-size:12px;
+    display:flex;
+    flex-direction:column;
+
+    & a {
+      text-decoration:underline;
+      cursor:pointer;
+      transition: .2s all;
+
+      &:hover {
+        opacity:0.5;
+      }
+    }
+  }
+  &-post {
+    //animation: fadeIn $primary-animation-time;
+    min-width:300px;
+    color: $primary-font-color;
+
+    &-body {
+      display:flex;
+      flex-direction:column;
+       
+      & span:not(:first-child) {
+        margin-top:5px;
+      }
+    }
+  }
+}
+.modalwindow {
+  padding: $containerPadding;
+  background-color:white;
+  //border:solid; 
+  box-shadow: $primary-box-shadow;
+
+  z-index:1;
+  position:fixed;
+  background-color:white;
+  transform:translate(-50%, -50%);
+  top:50%;
+  left:50%;
+  //padding: $containerPadding;
+}
 
 .resultinfobar {
   box-sizing: border-box;
@@ -217,7 +308,7 @@ $primary-box-shadow: 1px 1px 5px  rgb(165, 165, 165);
             border:solid 1px;
             cursor:pointer;
             text-align:center;
-            transition: .2s all;
+            transition: $primary-animation-time all;
             border-color:$secondary-font-color;
             padding:5px 10px;
             box-shadow: 1px 1px #cccccc;
@@ -232,7 +323,7 @@ $primary-box-shadow: 1px 1px 5px  rgb(165, 165, 165);
             //text-align:center;
             margin-bottom:4px;
             cursor:pointer;
-            transition: .2s all;
+            transition: $primary-animation-time all;
 
             &:hover {
               opacity:0.5;
@@ -292,9 +383,6 @@ $primary-box-shadow: 1px 1px 5px  rgb(165, 165, 165);
       //width:100%;
       margin-right: 10px;
     }
-    &-carrot:hover {
-      
-    }
   }
   &-list {
     z-index:1;
@@ -303,33 +391,34 @@ $primary-box-shadow: 1px 1px 5px  rgb(165, 165, 165);
     width:100%;
     box-sizing: border-box;
     box-shadow: $primary-box-shadow;
-    max-height:150px;
+    max-height:175px;
     overflow-y:scroll;
+    animation: fadeIn $primary-animation-time;
     & ul {
-      
-
       margin:0;
       padding:0;
       list-style: none;
-      
-
       & li {
         padding:10px 10px;
-
-       // padding:5px 4px;
         cursor:pointer;
         &:not(:last-child) {
           border-bottom:solid 1px;
           border-color:$secondary-font-color;
         }
+
+        transition: $primary-animation-time all;
         &:hover {
           opacity:0.5;
         }
       }
     }
   }
+}
 
-  
+// keyframes
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
 }
 
 .checkmarkInputWithLabel{

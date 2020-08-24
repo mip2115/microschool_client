@@ -15,15 +15,19 @@ export const InputFieldContainer  = (props) => {
 
 export const TextInputWithPlaceholder = (props) => {
     let {
-
+        type,
         placeholder
     } = props;
+
+    if (type==undefined || type==null) {
+        type="text"
+    }
 
     return (
         <div className="textInputWithPlaceholder">
             <input 
                 placeholder={placeholder}
-                type="text"
+                type={type}
             />
         </div>
     )
@@ -137,51 +141,5 @@ class TextDropDownComponent extends Component {
     }
 }
 
-// class TextDropDownComponent = function(props) {
-//     let {
-//         placeholder
-//     } = props;
-
-//     const [displayList, setDisplayList] = useState(true);
-
-//     const handleClickOutside = () => {
-
-//     }
-
-//     return (
-//         <div className="textDropdownWithPlaceholder">
-//             <div className="textDropdownWithPlaceholder-header">
-//                 <span className="textDropdownWithPlaceholder-header-selected">{placeholder}</span> 
-//                 <span className="textDropdownWithPlaceholder-header-carrot">&#9660;</span>
-//             </div>
-//             {displayList && 
-//             <div>
-//                 <div className="textDropdownWithPlaceholder-list">
-//                     <ul>
-//                         <li>
-//                             Kindergarden
-//                         </li>
-//                         <li>
-//                            First grade
-//                         </li>
-//                         <li>
-//                             Second grade
-//                         </li>
-//                         <li>
-//                             Third grade
-//                         </li>
-//                     </ul>
-//                 </div>
-//             </div>
-//             }
-           
-            
-           
-//         </div>
-//     )
-// }
-// const clickOutsideConfig = {
-//     handleClickOutside: () => TextDropDownComponent.handleClickOutside
-//   };
 
 export const TextDropDown = onClickOutside(TextDropDownComponent);
