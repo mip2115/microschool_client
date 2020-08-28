@@ -1,11 +1,15 @@
 import React from 'react';
 
-const NavItem = ({
+
+let NavItem = ({
     title,
+    handleClick,
 }) => {
   
     return(
-        <div className="navitem">
+        <div   
+            onClick={handleClick}
+            className="navitem">
             {title}
         </div>
     )

@@ -22,8 +22,8 @@ hr {
   height: 1px;
   border: 0;
   border-top: 1px solid $secondary-font-color;
-  margin: 20px 0;
-  padding: 0;
+
+  
 }
 
 .app-wrapper {
@@ -71,6 +71,10 @@ hr {
   justify-content: center;
   align-items:center;
   height:20px;
+  transition: $primary-animation-time all;
+  &:hover {
+    opacity:0.5;
+  }
 
 }
 
@@ -104,8 +108,26 @@ hr {
 
 
 // components 
+.btn-primary {
+  text-align:center;
+   
+  width:120px !important;
+  border: solid 1px $secondary-font-color;
+  display:inline-block;
+  cursor:pointer;
+  transition:.2s all;
+
+  padding:10px 15px;
+  box-shadow: 1px 1px #cccccc;
+  font-size:16px;
+  &:hover {
+    opacity:.5;
+  }
+}
 .signup {
   color: $primary-font-color;
+  
+
   
   &-title {
     display:flex;
@@ -125,23 +147,16 @@ hr {
   }
   &-body {
     margin-top:30px;
-    text-align:right;
-    &-btn {
-      margin-top:20px;
-      box-shadow: 1px 1px #cccccc;
-      text-align:center;
-      padding: 5px 5px;
-      width:150px;
-      border: solid 1px $secondary-font-color;
-      display:inline-block;
-      cursor:pointer;
-      transition:.2s all;
-
-      &:hover {
-        opacity:.5;
-
-      }
+    
+    &-btns {
+      margin-top:40px;
+      text-align:right;
+      display:flex;
+      flex-direction: column;
+      justify-content: flex-end;;
+      align-items:flex-end;
     }
+ 
   }
   &-footer {
     margin-top:40px;
@@ -174,18 +189,49 @@ hr {
     }
   }
 }
+
+// modal
+
 .modalwindow {
+  border-radius: 2px;;
+  z-index:1;
+  animation: fadeIn $primary-animation-time;
+  &-close {
+    animation: fadeOut $primary-animation-time;
+    display:none;
+    
+  }
   padding: $containerPadding;
   background-color:white;
   //border:solid; 
-  box-shadow: $primary-box-shadow;
+  //box-shadow: $primary-box-shadow;
+  box-shadow: 0 0 0 1000px rgba(0,0,0,.8);
+  /* for real browsers */
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,.8);
 
-  z-index:1;
+
   position:fixed;
   background-color:white;
   transform:translate(-50%, -50%);
   top:50%;
   left:50%;
+
+  &-header {
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-end;
+
+    & span {
+      cursor:pointer;
+      transition:.5s all;
+      &:hover {
+        opacity:0.5;
+      }
+    }
+  }
+  &-body{
+    margin-top:20px;
+  }
   //padding: $containerPadding;
 }
 
@@ -263,6 +309,7 @@ hr {
     margin-left: 10px;
 
     &-header {
+      
       //-decoration:underline;
       box-sizing: border-box;
       //border-bottom:solid 1px;
@@ -275,6 +322,8 @@ hr {
       width:100%;
 
       font-size:20px;
+      
+ 
     }
     &-overview {
       margin-top:2px;
@@ -283,6 +332,8 @@ hr {
       //border:solid;
       flex:1;
       justify-content: space-between;
+     
+    
 
 
       &-info {
@@ -293,8 +344,12 @@ hr {
         position:relative;
         //border:solid;
         width:250px;
+        
+        
+        
 
         &-box {
+          
           display:flex;
           flex-direction:column;
           position:absolute;
@@ -304,19 +359,6 @@ hr {
           left: 0;
           width:150px;
 
-          &-btn {
-            border:solid 1px;
-            cursor:pointer;
-            text-align:center;
-            transition: $primary-animation-time all;
-            border-color:$secondary-font-color;
-            padding:5px 10px;
-            box-shadow: 1px 1px #cccccc;
-
-            &:hover {
-              opacity:0.5;
-            }
-          }
 
           &-link {
             color:green;
@@ -339,7 +381,7 @@ hr {
         flex-direction: column;
         justify-content: flex-end;;
         align-content: flex-end;;
-
+        margin-right:10px;
         & span {
           font-size:20px;
         }
@@ -421,6 +463,11 @@ hr {
   100% {opacity: 1;}
 }
 
+@keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
 .checkmarkInputWithLabel{
   display:flex;
   flex-direction: row;
@@ -473,6 +520,7 @@ hr {
 
 // screens
 .results {
+  animation: fadeIn $primary-animation-time;
   color: $primary-font-color;
   padding:10px;
   box-sizing: border-box;
@@ -485,7 +533,50 @@ hr {
   }
 }
 
+.about, .contact {
+  animation: fadeIn $primary-animation-time;
+  &-header {
+    height:200px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    font-size:35px;
+    
+    color:$primary-font-color;
+  }
+  &-content {
+    
+    display:flex;
+    flex-direction: row;;
+    position:relative;
+    &-info {
+      flex:1;
+      padding: $containerPadding;
+      line-height:24px;
+      position:relative;
+      &-title {
+        font-weight:bold;
+      }
+     
+    }
+    &-img {
+      flex:1;
+      display:flex;
+      flex-direction:row;
+      justify-content: flex-end;
+      align-items: center;
+      padding: $containerPadding; 
+
+      //height:400px;
+      //background-image: url("../res/images/main-image-2.jpg");
+     // background-size:cover;
+      //padding: $containerPadding;
+    
+    }
+  }
+}
 .welcome {
+  animation: fadeIn $primary-animation-time;
   color: $primary-font-color;
   box-sizing: border-box;
   

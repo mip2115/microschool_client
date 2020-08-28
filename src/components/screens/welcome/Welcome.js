@@ -1,6 +1,13 @@
 import React from 'react';
 import Searchbar from '../../search/Searchbar';
-const Welcome = () => {
+import { connect } from "react-redux";
+import {
+    setSearchQuery
+} from '../../../redux/actions/searchActions';
+
+const Welcome = ({
+    setSearchQuery
+}) => {
     return (
         <div className="welcome">
           
@@ -12,7 +19,7 @@ const Welcome = () => {
             
             <div className="welcome-box">
                 <div className="welcome-box-search">
-                    <Searchbar />
+                    <Searchbar handleSearch={setSearchQuery}/>
                 </div>
                 <div className="welcome-box-info">
                
@@ -34,4 +41,12 @@ const Welcome = () => {
     )
 }
 
-export default Welcome;
+const mapStateToProps = (state) => {
+    return {
+        searchTerm: state.search.searchTerm,
+    }
+};
+
+export default connect(mapStateToProps, {
+    setSearchQuery
+})(Welcome);
