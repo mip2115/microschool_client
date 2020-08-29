@@ -27,6 +27,13 @@ const ResultItem = (props) => {
                 <div className="resultitem-content-overview">
                     <div className="resultitem-content-overview-info">
                         <span>{name} </span> 
+                        <br />
+                        <span style={{fontSize:'14px'}}>
+                            &#10003; Masks required
+                        </span>
+                        <span style={{fontSize:'14px'}}>
+                            &#10003; Zoom in option 
+                        </span>
                         {/* <span style={{fontSize:"12px"}}>PhD in geometry </span> 
                         <span style={{fontSize:"12px"}}>Cambridge University 2020 </span>  */}
                         {/* <span style={{display:'inline-block', fontSize:"12px"}} className="resultitem-content-overview-info-box-link">
@@ -35,11 +42,14 @@ const ResultItem = (props) => {
                         <span className="resultitem-content-overview-info-box">
                             
                             <div className="btn-primary">
-                            View
+                            View Course
                             </div>
+
+                         
                             
                         </span>
                     </div>
+                   
                     <div className="resultitem-content-overview-rating">
                         <span>&#9733; {rating}</span>
                     </div>

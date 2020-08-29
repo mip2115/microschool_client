@@ -1,5 +1,4 @@
 import React from 'react';
-import image from '../../../res/images/main-image-2.jpg'
 const Contact = () => {
     const style = {
         display:'block',
@@ -10,19 +9,26 @@ const Contact = () => {
             <div className="contact-header">
                 Contact us
             </div>
-            <hr style={{margin: '0 25px'}}/>
+            <hr style={{margin:'0 25px'}}/>
             <div className="contact-content">
-                <div className="contact-content-info">
-
-
-                <div className="contact-content-info-text">
-                    Email us at info@infowars.com
+                <div className="contact-content-card">
+                    <div className="contact-content-card-icon">
+                        &#9742;
+                    </div>
+                    <div className="contact-content-card-text">
+                        1800-565-5555
+                    </div>
                 </div>
+                <div className="contact-content-card">
+                    <div className="contact-content-card-icon">
+                        &#9993;
+                    </div>
+                    <div className="contact-content-card-text">
+                        infowars@infowars.com
+                    </div>
+                </div>
+         
                 
-                </div>
-                <div  className="contact-content-img">
-                    <img style={{borderRadius:'2px'}}src={image} height="400px" width="600px" />
-                </div>
             </div>
             
 
